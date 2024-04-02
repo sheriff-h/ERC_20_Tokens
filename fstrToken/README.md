@@ -5,13 +5,7 @@ This project demonstrates a basic Hardhat use case. It comes with a sample contr
 Try running some of the following tasks:
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
+npx hardhat compile
 npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
+npx hardhat ignition deploy ./ignition/modules/Fstr_Token.js --network localhost
 ```
-
-70 % of the token had been preminted
-remaining will be minted as block reward for the validator
-this contract can generate limited tokens

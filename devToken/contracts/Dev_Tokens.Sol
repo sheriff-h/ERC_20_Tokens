@@ -1,0 +1,57 @@
+// // SPDX-License-Identifier: MIT
+// // Compatible with OpenZeppelin Contracts ^5.0.0
+// pragma solidity ^0.8.20;
+
+// import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+// import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
+// import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Capped.sol";
+// import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Pausable.sol";
+// import "@openzeppelin/contracts/access/Ownable.sol";
+
+// contract DevToken is ERC20, ERC20Burnable, ERC20Capped, ERC20Pausable, Ownable {
+//     address payable public owner;
+//     uint256 public blockReward;
+
+//     constructor(
+//         uint cap,
+//         uint reward
+//     )
+//         ERC20("DevToken", "DTK")
+//         Ownable(msg.sender)
+//         ERC20Capped(cap * (10 ** decimals()))
+//     {
+//         owner = msg.sender;
+//         _mint(owner, 70000 * (10 ** decimals()));
+//         blockReward = reward * (10 ** decimals());
+//     }
+
+//     function _mint(address to, uint amount) internal virtual override {
+//         require(
+//             ERC20.totalSupply() + amount <= cap(),
+//             "ERC20Capped: cap exceeded"
+//         );
+//         super._mint(to, amount);
+//     }
+
+//     function mint(address to, uint256 amount) public onlyOwner {
+//         _mint(to, amount);
+//     }
+
+//     function pause() public onlyOwner {
+//         _pause();
+//     }
+
+//     function unpause() public onlyOwner {
+//         _unpause();
+//     }
+
+//     // The following functions are overrides required by Solidity.
+
+//     function _update(
+//         address from,
+//         address to,
+//         uint256 value
+//     ) internal override(ERC20, ERC20Pausable) {
+//         super._update(from, to, value);
+//     }
+// }
